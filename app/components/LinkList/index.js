@@ -8,13 +8,13 @@ import React from 'react';
 import Link from '../Link';
 import styles from './styles.css';
 
-function LinkList({ links, routeTopicName }) {
+function LinkList({ links, topicName }) {
   const linkNodes = links.map(link => (
     <Link key={link.id} link={link} />
   ));
   return (
     <div className={styles.linkList}>
-      {routeTopicName}
+      <h1>{topicName}</h1>
       {linkNodes}
     </div>
   );
@@ -28,7 +28,7 @@ LinkList.propTypes = {
       id: React.PropTypes.string.isRequired,
     })
   ).isRequired,
-  routeTopicName: React.PropTypes.string.isRequired,
+  topicName: React.PropTypes.string.isRequired,
 };
 
 export default LinkList;
