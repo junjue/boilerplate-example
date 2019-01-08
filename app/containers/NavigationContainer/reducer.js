@@ -23,6 +23,8 @@ function navigationContainerReducer(state = initialState, action) {
       return state.set('selectTopic', action.topic).set('isDrawerOpen', false);
     case TOGGLE_DRAWER:
       return state.set('isDrawerOpen', !state.get('isDrawerOpen'));
+    case '@@router/LOCATION_CHANGE':
+      return state.set('routerLocation', action.payload.pathname);
     default :
       return state;
   }
