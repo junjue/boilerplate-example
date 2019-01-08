@@ -43,3 +43,13 @@
     background-color: rgba(0,0,0,0.05);
     font-weight: 700;
 }
+
+.errorMessage {
+    color: #cd1313;
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+.inputError {
+    border-bottom-color: #cd1313;
+}
