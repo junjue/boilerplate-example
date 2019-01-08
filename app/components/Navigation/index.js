@@ -9,10 +9,16 @@ import React from 'react';
 
 import styles from './styles.css';
 
-function Navigation({ topics }) {
+function Navigation({ topics, selectTopic }) {
+  const topicsNodes = topics.map(topic => (
+    <div key={topic.name} onClick={() => selectTopic(topic)}>
+      {topic.name}
+    </div>
+  ));
+
   return (
     <div className={styles.navigation}>
-      We have {topics.length} topics in the nav component
+      {topicsNodes}
     </div>
   );
 }
@@ -24,6 +30,7 @@ Navigation.propTypes = {
       description: React.PropTypes.string.isRequired,
     })
   ).isRequired,
+  selectTopic: React.PropTypes.func.isRequired,
 };
 
 export default Navigation;
