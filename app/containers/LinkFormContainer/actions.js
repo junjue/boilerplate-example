@@ -5,7 +5,10 @@
  */
 
 import {
-  ADD_LINK, ADD_LINK_SUCCESS, ADD_LINK_FAIL,
+  ADD_LINK,
+  ADD_LINK_SUCCESS,
+   ADD_LINK_FAIL,
+   ADD_LINK_CANCELLED,
 } from './constants';
 
 export function addLink(link) {
@@ -27,5 +30,11 @@ export function addLinkFail(link, message) {
     type: ADD_LINK_FAIL,
     link,
     message,
+  };
+}
+
+export function addLinkCancelled() {
+  return {
+    type: ADD_LINK_CANCELLED,
   };
 }
